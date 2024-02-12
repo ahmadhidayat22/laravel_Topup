@@ -1,0 +1,68 @@
+[
+    {
+      "product_sku" : "ml1",
+      "id_product" : 1,
+      "product_name" : "mobile legend",
+      "product_denom" : "1 diamond",
+      "product_category" : "Top Up",
+      "product_type" : "umum",
+      "product_seller_price" : 4500,
+      "product_buyer_price" : 9000,
+      "product_status_buyer" : "On",
+      "product_status_seller" : "Off"
+    },
+    
+    {
+      "product_sku" : "ml8",
+      "id_product" : 1,
+      "product_name" : "mobile legend",
+      "product_denom" : "8 diamond",
+      "product_category" : "Top Up",
+      "product_type" : "umum",
+      "product_seller_price" : 8500,
+      "product_buyer_price" : 10000,
+      "product_status_buyer" : "On",
+      "product_status_seller" : "Off"
+    },
+    
+    {
+      "product_sku" : "ml16",
+      "id_product" : 1,
+      "product_name" : "mobile legend",
+      "product_denom" : "16 diamond",
+      "product_category" : "Top Up",
+      "product_type" : "umum",
+      "product_seller_price" : 8500,
+      "product_buyer_price" : 10000,
+      "product_status_buyer" : "Off",
+      "product_status_seller" : "Off"
+    },
+    
+    {
+      "product_sku" : "ff3",
+      "id_product" : 2,
+      "product_name" : "Free Fire",
+      "product_denom" : "3 diamond",
+      "product_category" : "Top Up",
+      "product_type" : "umum",
+      "product_seller_price" : 2500,
+      "product_buyer_price" : 3000,
+      "product_status_buyer" : "On",
+      "product_status_seller" : "On"
+    },
+    
+    {
+      "product_sku" : "ff12",
+      "id_product" : 2,
+      "product_name" : "Free Fire",
+      "product_denom" : "12 diamond",
+      "product_category" : "Top Up",
+      "product_type" : "umum",
+      "product_seller_price" : 8500,
+      "product_buyer_price" : 9000,
+      "product_status_buyer" : "On",
+      "product_status_seller" : "On"
+    }
+   
+   
+]

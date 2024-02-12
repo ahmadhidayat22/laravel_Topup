@@ -1,0 +1,19 @@
+.board-user{
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.list-group a{
+  padding: 5px 10px;
+  color: white;
+  display: flex;
+
+  gap: 4px;
+}
+.list-group a:hover{
+  background:linear-gradient(to right , rgb(40, 42, 54) 0%, #21222c 50%,#17181f 100%) 
+}
+.aktif{
+  background: linear-gradient(to right , rgb(0, 128, 202) 0%, rgb(1, 75, 212)50%, rgb(23, 24, 31) 100%)!important;
+
+}

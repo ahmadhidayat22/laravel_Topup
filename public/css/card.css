@@ -1,0 +1,284 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.kartu {
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    padding: 1.5rem;
+    /* background: white; */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  }
+  /* .kartu:hover {
+    transform: translateY(20px);
+  } */
+.kartu:hover:before {
+  opacity: 1;
+  border: 3px solid orange;
+}
+.kartu:hover .info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.kartu:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: 0.3s;
+  opacity: 0;
+  border: 3px solid orange;
+
+  
+}
+.kartu img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+      object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+.kartu .info {
+  position: relative;
+  z-index: 3;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  
+
+}
+.kartu .info h4 {
+  margin: 0px;
+  font-size: 18px;
+}
+.kartu .info p {
+  letter-spacing: 1px;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.denom-label{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.denom{
+  position: absolute;
+  display: none;
+
+}
+input[type="number"]:focus{
+  background-color: #fff!important;
+}
+/* .denom-label:hover{
+  background-color: rgb(236, 236, 236);
+  
+} */
+.denom:checked + label{
+  /* border: 3px solid rgb(0, 132, 255); */
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.938), -2px -2px 4px rgba(255, 255, 255, 0.938);
+  .text-denom{
+    color: rgb(0, 0, 0)!important;
+  }
+}
+.ini-dropdown:hover{
+  background: #333333;
+}
+.ini-dropdown{
+  padding: 2px 0;
+}
+.btn-logout{
+  width: 100%;
+  background: transparent;
+  color: white;
+}
+
+.parent-bayar{
+  cursor: pointer;
+	transition: all ease-in 0.3s!important;
+  transition-property: height;
+ background-color: #32393f;
+}
+
+.rotate-normal{
+  transform: rotate(0deg)!important;
+  transition: all ease-out 0.2s;
+}
+.isi{
+  height: 0px;
+}
+.after{
+  display: flex!important;
+  background-color: #32393f; 
+ 
+  animation: after 0.1s ease 0.2s forwards;
+}
+.logo{
+  height: 30px;
+  animation:downThenUp 0.5s ease 0.4s backwards ;
+  background-color: #7d838a; 
+
+
+}
+.close{
+  animation: upThenDown 0.5s ease 0.2s forwards;
+}
+.card-isi-block{
+  display: block!important;
+  transition: all ease-out 3s;
+  position: relative;
+}
+@keyframes after {
+  0%{
+    height: 0px;
+  }
+  100%{
+    height: 100px;
+  }
+}
+@keyframes upThenDown {
+  0%{
+    height:30px;
+  }
+  50%{
+    height: 40px;
+  }
+  100%{
+    height: 0px;
+  }
+}
+
+@keyframes downThenUp {
+  0%{
+    height: 0px;
+  }
+  50%{
+    height: 40px;
+  }
+  100%{
+    height:30px;
+  }
+}
+
+
+
+
+
+
+
+  
+  @media (max-width: 1400px) { 
+    .kartu {
+      width: 180px;
+      height: 270px;
+      
+    }  
+    
+  }
+  @media (max-width: 1200px) { 
+    .kartu {
+      width: 150px;
+      height: 250px;
+    }  
+    
+
+    .kartu .info h4{
+      font-size: 15px;
+    }  
+  }
+  @media  ( max-width: 1024px) { 
+    .kartu {
+      width: 130px;
+      height: 210px;
+      padding: 1rem;
+    }  
+    .kartu .info h4{
+      font-size: 12px;
+    }
+    .kartu .info p {
+      letter-spacing: 0.8px;
+      font-size: 10px;
+      margin-top: 8px;
+    }
+  }
+  @media (max-width: 992px) { 
+    .kartu {
+      width: 110px;
+      height: 150px;
+    }  
+    .kartu .info h4{
+      font-size: 10px;
+    }
+    .kartu .info p {
+      letter-spacing: 0.8px;
+      font-size: 8px;
+      margin-top: 8px;
+    }
+  }
+  @media (max-width: 768px) { 
+    .kartu {
+      width: 100px;
+      height: 130px;
+    }  
+    .masuk{
+      margin-left: 0!important;
+    }
+    .daftar{
+      background-color: transparent!important;
+    }
+    .profile{
+      display: none;
+    }
+    .ini-dropdown{
+      display: block!important;
+    }
+    .kartu .info h4{
+      font-size: 10px;
+    }
+    .link-utama{
+      margin: 0!important;
+    }
+  }
+  @media (max-width: 320px) { 
+    .kartu {
+      width: 80px;
+      height: 100px;
+    }  
+    .kartu .info h4{
+      font-size: 10px;
+    }
+    .kartu .info p {
+      letter-spacing: 0.8px;
+      font-size: 6px;
+      margin-top: 8px;
+    }
+  }
+
+  

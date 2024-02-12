@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.body {
+    background-image:
+    linear-gradient(to right top,rgba(0, 0, 0, 0.74),rgba(90, 89, 89, 0.658), rgba(167, 166, 166, 0) ),
+    url("../img/p.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+
+/* img{
+    height: 100vh;
+    width: 100vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    
+} */
+/* @include media-breakpoint-up(md) { 
+    .profile{
+        display :none;
+    }
+} */
+
+

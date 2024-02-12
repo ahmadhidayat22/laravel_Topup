@@ -1,0 +1,37 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    color: #FFFFFF;
+    width: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 10px ;
+  }
+  th {
+    color: #FFFFFF;
+    border-bottom: 1px solid white;
+  }
+  th, td {
+    padding: 10px;
+    /* border: 1px solid #FF0000; */
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f200;
+  }
+  /* required css to make rounded table (below) */
+  tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+  tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+
+  .ini-toggle::after{
+    margin-left: 4rem!important;
+  }
