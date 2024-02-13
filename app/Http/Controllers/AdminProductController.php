@@ -50,34 +50,35 @@ class AdminProductController extends Controller
      */
     public function store(Request $request, product $product)
     {
-        $rules = [
+        // dd($request);
+        $validateData = $request->validate([
             'nama' => 'required|max:255',
-            'category' => 'required',
-            'deskripsi' => 'required',
-            // 'picture' => 'required|image|file|max:1024',
-            'developer' => 'required'
-           
+            'fk_category' => 'required',
+            'provider' => 'required',
+            'slug' => 'required|unique:products',
+            'picture' => 'image|file|max:5024',
+            'deskripsi' => 'required'
+            
+        ]);
 
-        ];
-        if($request->slug != $product->slug){
-            $rules['slug']= 'required|unique:products';
-        }
+        // dd($validateData);
+        // dd($validateData);
 
+        // if($request->slug != $product->slug){
+        //     $rules['slug']= 'required|unique:products';
+        // }
         
-        if($request->gambar == ''){
-            $rules['gambar'] = 'none';
-        }
-        
-        
-        // if($request->file('image')) //cek jika ada image baru
-        // {
-            //     if($request->oldImage){
+        if($request->file('picture')) //cek jika ada request picture
+        {
+                // if($request->oldImage){
                 //         Storage::delete($request->oldImage);
                 //     }
-                //     $validateData['image'] = $request->file('image')->store('post-images');;
-                // }
+
+                $validateData['picture'] =  $request->file('picture')->store('product-images');
+
+        }
                 
-        $validateData =$request->validate($rules);
+       
         
         product::create($validateData);
 

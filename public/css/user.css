@@ -51,6 +51,23 @@ table {
   }
   
 
+  /* .form-check-input::before{
+    content: 'Off';
+    color: white;
+    float:left;
+
+  } */
+  .product-btn:hover{
+    background-color: #c2ce19!important;
+    color: #252631!important;
+    transition: all .2s ease-in;
+    
+  }
+  .product-btn-focus{
+    isolation: isolate;
+    background-color: #c2ce19!important;
+    color: #252631!important;
+  }
 
 
 

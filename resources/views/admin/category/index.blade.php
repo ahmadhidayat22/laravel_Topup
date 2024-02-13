@@ -8,11 +8,16 @@
 
         <h3 class="mt-3 ms-2 fw-bolder">Category</h3>
     </div>
+    @if (session()->has('success'))
+    <div class="alert alert-success mb-3" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
     <hr>
     <div class=" mt-4 mx-1 mb-4 rounded p-3" style="background-color: #24252c;box-shadow: 0px -5px 2px  #676b80">
         <div class="d-flex justify-content-between align-items-baseline" >
 
-            <a href="" class="d-block" style="width:120px">
+            <a href="/admin/category/create" class="d-block" style="width:120px">
                 <div class="rounded p-1 mt-2 text-center " style="background-color: rgb(24, 37, 212);width:inherit">Create New</div>
             </a>
             <div class="d-block" style="width: 300px">
@@ -41,18 +46,16 @@
                 <tr>
                     <td>{{ $prd+1 }}</td>
                     <td>{{ $key->category_name }}</td>
-                    <td>
-                        <a href="/admin/product/{{ $key->slug }}" class="badge bg-info text-center "><i
-                            class="bi bi-eye fs-6"></i></a>
-                    <a href="/admin/product/{{ $key->slug }}/edit" class="badge bg-warning text-center "><i
-                            class="bi bi-pencil fs-6"></i></a>
+                    <td>    
+                        <a href="/admin/category/{{ $key->slug }}/edit" class="badge bg-warning text-center "><i
+                                class="bi bi-pencil fs-6"></i></a>
 
-                    <form method="post" action="/admin/product/{{ $key->slug }}" class="d-inline">
-                        @method('delete')
-                        @csrf
+                        <form method="post" action="/admin/product/{{ $key->slug }}" class="d-inline">
+                            @method('delete')
+                            @csrf
 
-                        <button class="badge bg-danger border-0 " onclick="return confirm('Are you sure ?')"><i
-                                class="bi bi-trash3 fs-6"></i></button>
+                            <button class="badge bg-danger border-0 " onclick="return confirm('Are you sure ?')"><i
+                                    class="bi bi-trash3 fs-6"></i></button>
 
                     </form>
                     </td>

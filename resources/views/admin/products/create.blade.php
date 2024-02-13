@@ -10,7 +10,7 @@
     <hr>
     <div class=" mt-4 mx-1 mb-4 rounded p-3" style="background-color: #24252c;box-shadow: 0px -5px 2px  #676b80; ">
        <div>
-        <form action="/admin/product/" method="post">
+        <form action="/admin/product/" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Nama</label>
@@ -29,14 +29,18 @@
             </div>
             
             <div class="mb-3">
-                <label for="category" class="form-label">Category</label>
-                <select class="form-select @error('category') is-invalid @enderror" id="category" aria-label="Default select example" name="category" >
+                <label for="fk_category" class="form-label">Category</label>
+                <select class="form-select @error('fk_category') is-invalid @enderror" id="fk_category" aria-label="Default select example" name="fk_category" >
                     <option value="" selected>- Choose Category -</option>
-                @foreach ($category as $ct )
-                    @if (old('category') === $ct->category_name)
-                        <option value="{{ $ct->category_name }}" selected>{{ $ct->category_name }}</option>
+                    @if(count($category) < 1)
+                            
+     
+                    @endif
+                @foreach ($category as $count => $ct )
+                    @if (old('fk_category') === $ct->category_name)
+                        <option value="{{ $ct->id }}" selected>{{ $ct->category_name }}</option>
                     @else
-                        <option value="{{ $ct->category_name }}">{{ $ct->category_name }}</option>
+                        <option value="{{ $ct->id  }}">{{ $ct->category_name }}</option>
 
                     @endif
                 
@@ -59,7 +63,7 @@
         
         <div class="mb-3">
             <label for="provider" class="form-label">Provider</label>
-            <input type="text" class="form-control @error('provider') is-invalid @enderror" id="provider" placeholder="Ex: Telkomsel,Tencent,Moonton" name="developer">
+            <input type="text" class="form-control @error('provider') is-invalid @enderror" id="provider" placeholder="Ex: Telkomsel,Tencent,Moonton" name="provider">
             
             @error('provider')
                 <p class="text-danger">{{ $message }}</p>
@@ -69,12 +73,12 @@
 
         <div class="mb-3">
             <label class="form-label" for="picture">Upload gambar</label>
-            <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="gambar" value="{{ old('picture') }}">
+            <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" >
             @error('picture')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
 
-          </div>
+        </div>
         
         <button type="submit" class="btn btn-primary">Add Product</button>
     </form>
