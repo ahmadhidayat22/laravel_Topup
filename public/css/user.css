@@ -35,3 +35,23 @@ table {
   .ini-toggle::after{
     margin-left: 4rem!important;
   }
+  .nav-link{
+    color: rgb(185, 185, 185)!important;
+  }
+  .active{
+    color: black!important;
+  }
+  /* .nav-tabs:hover{
+    border: none !important;
+
+  } */
+  .nav-link:hover{
+    color: #ffffff!important;
+    border: none !important;
+  }
+  
+
+
+
+
+

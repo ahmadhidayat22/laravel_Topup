@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use App\Models\Kategory;
+use App\Models\product_details;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -20,8 +21,12 @@ class AdminProductController extends Controller
     public function index() : view
     {
         $product = product::all();
+        $category = Kategory::all();
+        $product_detail = product_details::all();
         return view('admin.products.index' , [
-            'product' => $product
+            'product' => $product,
+            'category' => $category,
+            'product_detail' => $product_detail
         ]);
     }
 

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('fk_category');
             $table->string('slug')->unique();
             $table->string('nama');
-            $table->string('category')->nullable();
             $table->text('deskripsi')->nullable();
             $table->text('developer')->nullable();
             $table->string('gambar')->nullable();

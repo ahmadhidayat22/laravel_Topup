@@ -2,101 +2,140 @@
     {
       "slug": "mobile-legends",
       "nama": "Mobile Legends: Bang Bang",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
     },
     {
       "slug": "garena-free-fire",
       "nama": "Garena Free Fire",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
+      
     },
     {
       "slug": "pubg-mobile",
       "nama": "PUBG Mobile",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     },
     {
       "slug": "call-of-duty-mobile",
       "nama": "Call of Duty: Mobile",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 3
+
     },
     {
       "slug": "arena-of-valor",
       "nama": "Arena of Valor (Honor of Kings)",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     },
     {
       "slug": "clash-royale",
       "nama": "Clash Royale",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
     },
     {
       "slug": "clash-of-clans",
       "nama": "Clash of Clans",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "fornite",
       "nama": "Fortnite",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "minecraft-pocket-edition",
       "nama": "Minecraft: Pocket Edition",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "among-us",
       "nama": "Among Us",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "roblox",
       "nama": "Roblox",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "pokemon-go",
       "nama": "Pokémon GO",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     },
     {
       "slug": "subway-surfers",
       "nama": "Subway Surfers",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "candy-crush-saga",
       "nama": "Candy Crush Saga",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 1
+
     },
     {
       "slug": "8-ball-pool",
       "nama": "8 Ball Pool",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 3
+
     },
     {
       "slug": "brawl-stars",
       "nama": "Brawl Stars",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     },
     {
       "slug": "ragnarok-m-eternal-love",
       "nama": "Ragnarok M: Eternal Love",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 3
+
     },
     {
       "slug": "lineage-2-revolution",
       "nama": "Lineage 2: Revolution",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 3
+
     },
     {
       "slug": "black-desert-mobile",
       "nama": "Black Desert Mobile",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     },
     {
       "slug": "worl-of-tank-blitz",
       "nama": "World of Tanks Blitz",
-      "gambar": "none"
+      "gambar": "none",
+      "fk_category" : 2
+
     }
   ]
