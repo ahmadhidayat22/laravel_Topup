@@ -13,6 +13,11 @@
         {{ session('success') }}
     </div>
 @endif
+@if (session('warning'))
+  <div class="alert alert-warning">
+    {{ session('warning') }}
+  </div>
+@endif
     <hr>
     <div class=" mt-4 mx-1 mb-4 rounded p-3" style="background-color: #24252c;box-shadow: 0px -5px 2px  #676b80">
         <div class="d-flex justify-content-between align-items-baseline" >
@@ -41,36 +46,153 @@
                   </tr>
             </thead>
             <tbody>
+                @isset($category)
                 @foreach ($category as $prd => $key)
                     
-                <tr>
-                    <td>{{ $prd+1 }}</td>
-                    <td>{{ $key->category_name }}</td>
-                    <td>    
-                        <a href="/admin/category/{{ $key->slug }}/edit" class="badge bg-warning text-center "><i
+                    <tr>
+                        <td>{{ $prd+1 }}</td>
+                        <td>{{ $key->category_name }}</td>
+                        <td>    
+                            <a href="/admin/category/{{ $key->slug }}/edit" class="badge bg-warning text-center "><i
                                 class="bi bi-pencil fs-6"></i></a>
+                                
+                                {{-- <form method="post" action="{{ route('category.destroy', $key->id) }}" class="d-inline">
+                                    @method('delete')
+                                    @csrf --}}
+                                    
+                                    <button id="deleteBtn" class="deleteBtn badge bg-danger border-0 " href="{{ route('category.destroy', $key->id) }}" data-id = "{{ $key->id }}"><i
+                                        class="bi bi-trash3 fs-6"></i></button>
 
-                        <form method="post" action="/admin/product/{{ $key->slug }}" class="d-inline">
-                            @method('delete')
-                            @csrf
-
-                            <button class="badge bg-danger border-0 " onclick="return confirm('Are you sure ?')"><i
-                                    class="bi bi-trash3 fs-6"></i></button>
-
-                    </form>
-                    </td>
-                    
+                                        {{-- </form> --}}
+                                    </td>
+                        
+                    </tr>
+                    @endforeach
+                
+                @else
+                <tr>
+                    <td>peee</td>
                 </tr>
-                @endforeach
+
+                    
+
+                @endif
+                
             </tbody>
         </table>
-
-       
+        
+        
 
     </div>
 
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+   
+    $(document).ready(function(){
+        $('.deleteBtn').on('click', function(){
+            let id = $(this).attr('data-id');
+            let url_route = $(this).attr('href');
+            // console.log(url_route);
+            swal.fire({
+                title: "Peringatan!",
+                text: "Apakah anda yakin ingin menghapus?",
+                icon: "warning",
+                showDenyButton: true,
+                confirmButtonText: "ya",
+                denyButtonText: "No"
+                }).then((result) => {
+                    // console.log(result);
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url_route,
+                            type: "DELETE",
+                            headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            data: {
+                                isConfirmed : false
+                            },
+                            dataType: "json",
+                            success: function(res){
+                                // console.log(res);
+                                if(res.warning){
+                                    swal.fire({
+                                    text: res.warning,
+                                    title: 'Peringatan!',
+                                    icon: "warning",
+                                    showDenyButton: true,
+                                    confirmButtonText: "ya",
+                                    denyButtonText: "No"
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            $.ajax({
+                                                url: url_route,
+                                                type: "DELETE",
+                                                data: {
+                                                    isConfirm : true
+                                                },
+                                                headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                },
+                                                dataType: "json", 
+                                                success: function(res){
+                                                    location.reload(true)
+
+                                                },
+                                                error: function(err){
+                                                    console.log(err);
+                                                }
+                                            
+                                            });
+                                        }
+                                    });
+                                }else{
+                                    location.reload(true)
+                                }
+                            },
+                            error: function(err){
+                                console.log(err);
+                            }
+
+
+                        })
+
+                       
+                
+                    }else{
+                        
+                        console.log('no');
+                    }
+            });
+
+
+        });
+
+    });
+
+
+
+
+        // swal.fire({
+        //         title: "Peringatan!",
+        //         text: "Kategori ini memiliki produk. Apakah Anda ingin menghapus kategori beserta semua produknya?",
+        //         icon: "warning",
+        //         showDenyButton: true,
+        //         confirmButtonText: "ya",
+        //         denyButtonText: "No"
+        //     }).then((result) => {
+        //         if (result.isConfirmed) {
+        //         // Hapus kategori dan produk
+        //         console.log('ok');
+                
+        //         }else{
+        //             console.log('no');
+        //         }
+        //     });
+    
+</script>
 
 @endsection

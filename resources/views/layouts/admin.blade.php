@@ -26,7 +26,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        {{-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
         {{-- trix editor --}}
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
@@ -67,7 +67,15 @@
                 color: black;
 
             }
-
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                    margin: 0;
+            }
+    
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
             
 
         </style>

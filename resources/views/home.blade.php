@@ -63,10 +63,10 @@
                     <a href="/product/{{ $gm->slug }}">
 
                         <div class="kartu ">
-                            <img src="https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&amp;fit=crop&amp;w=667&amp;q=80&amp;ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"/>
+                            <img src="/storage/{{ $gm->picture }}"/>
                             <div class="info text-left" id="">
                               <h4 class="m-0">{{ $gm->nama }}</h4>
-                              <p class="m-0" style="color: rgba(211, 211, 211, 0.767)">{{ $gm->developer ?? 'undefined' }}</p>
+                              <p class="m-0" style="color: rgba(211, 211, 211, 0.767)">{{ $gm->provider ?? 'undefined' }}</p>
                             </div>
                         </div>
                    

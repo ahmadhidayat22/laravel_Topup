@@ -9,6 +9,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminProductDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,8 +103,9 @@ Route::get('admin/order', function(){
 })->name('order-admin');
 
 Route::get('admin/product/create/checkslug', [AdminProductController::class, 'checkslug']);
-Route::get('admin/category/create/checkslugCategory', [AdminCategoryController::class, 'checkslugCategory']);
+Route::get('admin/category/{slug:slug}/edit', [AdminCategoryController::class, 'show']);
 Route::resource('admin/product', AdminProductController::class);
+Route::resource('admin/productDetails', AdminProductDetailController::class);
 Route::resource('admin/category', AdminCategoryController::class);
 
 Route::get('admin/user', function(){

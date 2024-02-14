@@ -134,7 +134,7 @@
             </thead>
            
             <tr class="">
-              <td colspan="9" >
+              <td colspan="9">
                 <div class=" d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
                     <h2 class="fs-1"><i class="bi bi-bar-chart"></i></h2>
                     <p>Tidak ada data transaksi !</p>

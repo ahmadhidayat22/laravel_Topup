@@ -131,7 +131,7 @@ class AdminProductController extends Controller
     {
         //
     }
-
+    
     public function checkSlug(Request $request)
     {
         $slug = SlugService::createSlug(product::class, 'slug', $request->title);

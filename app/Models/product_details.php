@@ -10,5 +10,7 @@ class product_details extends Model
     use HasFactory;
     protected $guarded = [];
 
-    
+    public function product(){
+        return $this->hasMany(product::class);
+    }
 }
