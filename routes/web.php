@@ -102,6 +102,7 @@ Route::get('admin/order', function(){
 })->name('order-admin');
 
 Route::get('admin/product/create/checkslug', [AdminProductController::class, 'checkslug']);
+Route::get('admin/category/create/checkslugCategory', [AdminCategoryController::class, 'checkslugCategory']);
 Route::resource('admin/product', AdminProductController::class);
 Route::resource('admin/category', AdminCategoryController::class);
 
