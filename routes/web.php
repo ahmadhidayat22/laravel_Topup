@@ -104,6 +104,7 @@ Route::get('admin/order', function(){
 
 Route::get('admin/product/create/checkslug', [AdminProductController::class, 'checkslug']);
 Route::get('admin/category/{slug:slug}/edit', [AdminCategoryController::class, 'show']);
+Route::get('admin/product/edit/{slug}', [AdminProductController::class, 'edit' ]);
 Route::resource('admin/product', AdminProductController::class);
 Route::resource('admin/productDetails', AdminProductDetailController::class);
 Route::resource('admin/category', AdminCategoryController::class);

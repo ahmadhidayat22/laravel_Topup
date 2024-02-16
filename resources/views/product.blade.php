@@ -478,11 +478,7 @@
 
             
             
-            $("#submit").click(function(){
-               
-               
-                
-                
+            $("#submit").click(function(){            
                 
                if(!validate_id() || !validate_server()){
                     $('html, body').animate({

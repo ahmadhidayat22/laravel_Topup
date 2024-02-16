@@ -56,7 +56,7 @@ class AdminProductController extends Controller
             'fk_category' => 'required',
             'provider' => 'required',
             'slug' => 'required|unique:products',
-            'picture' => 'image|file|max:5024',
+            'picture' => 'required|image|file|max:5024',
             'deskripsi' => 'required'
             
         ]);
@@ -70,9 +70,11 @@ class AdminProductController extends Controller
         
         if($request->file('picture')) //cek jika ada request picture
         {
-                // if($request->oldImage){
-                //         Storage::delete($request->oldImage);
-                //     }
+
+                // dd($request->oldImage);
+                // // if($request->oldImage){
+                // //         Storage::delete($request->oldImage);
+                // //     }
 
                 $validateData['picture'] =  $request->file('picture')->store('product-images');
 
@@ -104,9 +106,15 @@ class AdminProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(product $product)
+    public function edit($slug) : view
     {
-        //
+        $product = product::where('slug', $slug)->first();
+        $category = Kategory::all();
+        return view('admin.products.edit', [
+            'category' => $category,
+            'product' => $product
+        ]);
+        
     }
 
     /**
@@ -118,7 +126,8 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        // dd($product);
+        
     }
 
     /**
@@ -129,7 +138,10 @@ class AdminProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+
+        $product->delete();
+        product_details::where('id_product', $product->id)->delete();
+        return response()->json(['okee' => $product]);
     }
     
     public function checkSlug(Request $request)

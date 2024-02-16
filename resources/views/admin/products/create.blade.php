@@ -20,9 +20,9 @@
                 @enderror
             </div>
             
-            <div class="mb-3">
+            <div class="mb-3  ">
                 <label for="slug" class="form-label">slug</label>
-                <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" placeholder="nama-produk" name="slug" value="{{ old('slug') }}"> 
+                <input type="text" class="form-control  @error('slug') is-invalid @enderror" style="background-color: #b4b4b4;border:none" id="slug" placeholder="nama-produk" name="slug" value="{{ old('slug') }}"  readonly > 
                 @error('slug')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -52,15 +52,7 @@
                 @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Deskripsi</label>
-            @error('description')
-                <p class="text-danger m-0">{{ $message }}</p>
-            @enderror
-            <input id="description" type="hidden" name="deskripsi" value="{{ old('description') }}">
-            <trix-editor input="description"></trix-editor>
-        </div>
-        
+       
         <div class="mb-3">
             <label for="provider" class="form-label">Provider</label>
             <input type="text" class="form-control @error('provider') is-invalid @enderror" id="provider" placeholder="Ex: Telkomsel,Tencent,Moonton" name="provider">
@@ -73,14 +65,24 @@
 
         <div class="mb-3">
             <label class="form-label" for="picture">Upload gambar</label>
+          
             <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" >
             @error('picture')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
 
         </div>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi</label>
+            @error('deskripsi')
+                <p class="text-danger m-0">{{ $message }}</p>
+            @enderror
+            <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">
+            <trix-editor input="deskripsi"></trix-editor>
+        </div>
         
         <button type="submit" class="btn btn-primary">Add Product</button>
+        <a href="/admin/product"><button class="btn btn-danger" type="button">Cancel</button></a>
     </form>
     </div>
        
@@ -95,12 +97,7 @@
         const title = document.querySelector("#title");
         const slug = document.querySelector("#slug");
 
-        // title.addEventListener("keyup", function() {
-        //     let preslug = title.value;
-        //     preslug = preslug.replace(/ /g, "-");
-        //     slug.value = preslug.toLowerCase();
-        // });
-        title.addEventListener("keyup", function() {
+        title.addEventListener("change", function() {
           fetch('/admin/product/create/checkslug?title=' + title.value)
           .then(response => response.json())
           .then(data => slug.value = data.slug);

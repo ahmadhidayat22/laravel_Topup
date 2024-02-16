@@ -22,7 +22,7 @@
         @else
 
         <h3 id="judul">Harap Lengkapi Pembayaran</h3>
-        <p id="keterangan">deposit kamu {{ $data->transaction_code }} menunggu pembayaran sebelum dikirim</p>
+        <p id="keteranga n">deposit kamu {{ $data->transaction_code }} menunggu pembayaran sebelum dikirim</p>
         @endif
     
     </div>
