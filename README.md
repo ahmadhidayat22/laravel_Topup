@@ -35,8 +35,12 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 - ```npm install```
 - ```composer install ```
 - ```php artisan migrate --seed ``` -> pastikan xampp menyala (apache dan mysql)
+
+jangan lupa untuk mengisi api key [digiflazz](https://digiflazz.com/) mu ke file .env 
+
 To running :
 ```php artisan serve```
+
 
 
 ## Laravel Sponsors
