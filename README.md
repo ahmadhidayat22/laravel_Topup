@@ -29,6 +29,16 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## How to install ??
+- ```git clone https://github.com/ahmadhidayat22/laravel_Topup.git ```
+- ```cd laravel_Topup ```
+- ```npm install```
+- ```composer install ```
+- ```php artisan migrate --seed ``` -> pastikan xampp menyala (apache dan mysql)
+To running :
+```php artisan serve```
+
+
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).

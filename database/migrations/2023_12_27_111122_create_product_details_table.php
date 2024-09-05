@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('product_sku')->unique()->nullable();
             $table->string('product_name');
             $table->string('product_denom');
+            $table->string('product_category');
+
             $table->string('product_type');
             $table->string('product_seller')->nullable();
             $table->integer('product_seller_price');

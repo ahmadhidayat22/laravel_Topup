@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('fk_category');
             $table->string('slug')->unique();
             $table->string('nama');
-            $table->text('deskripsi');
-            $table->text('provider');
-            $table->string('picture');
+            $table->text('deskripsi')->nullable()->change();
+            $table->text('provider')->nullable()->change();
+            // $table->text('provider');
+            $table->string('gambar');
             $table->timestamps();
         });
     }

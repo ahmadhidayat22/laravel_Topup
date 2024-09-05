@@ -1,11 +1,14 @@
 [
    {
+      "slug" : "top-up",
     "category_name" : "Top Up"
    } ,
    {
+      "slug" : "voucher",
     "category_name" : "Voucher"
    } ,
    {
+      "slug" : "pulsa",
     "category_name" : "Pulsa"
    } 
 ]

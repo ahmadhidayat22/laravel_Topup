@@ -8,7 +8,7 @@
             <div class="card-body pt-5" style="padding: 0">
                 
                 <h5 class="card-title mb-3" id="product_name">{{ $product[0]->nama }}</h5>
-                {!! $product[0]->deskripsi !!}
+                {{-- {!! $product[0]->deskripsi !!} --}}
 
             </div>
 
